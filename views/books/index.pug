@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h2 Search books by title
+  form(action="/books" method="GET")
+    label(for="title") Title
+      input(type="text" name="title" value=searchOptions.title)
+      button(type="submit") Search
+  br
+  div(class="book")
+    each book in books
+        p(class="author") Author: #{book.author}
+        p(class="title") Title: #{book.title}
+        p(class="publish-date") Publish date: #{book.publishDate.toDateString()} 
+        p(class="page-count") Page count: #{book.pageCount}
+        p(class="description") Description: #{book.description === "" ? "none" : book.description}
+
