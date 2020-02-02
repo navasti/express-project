@@ -7,11 +7,14 @@ block content
       input(type="text" name="title" value=searchOptions.title)
       button(type="submit") Search
   br
-  div(class="book")
+  div(class="books")
     each book in books
+      div(class="book")
         p(class="author") Author: #{book.author}
         p(class="title") Title: #{book.title}
         p(class="publish-date") Publish date: #{book.publishDate.toDateString()} 
         p(class="page-count") Page count: #{book.pageCount}
         p(class="description") Description: #{book.description === "" ? "none" : book.description}
+        form(method='POST' action="/books/"+book.id+"?_method=DELETE")
+          button(type="submit") Delete
 

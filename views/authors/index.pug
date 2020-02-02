@@ -9,4 +9,7 @@ block content
   br
   div(class="authors")
    each author in authors
-    p=author.name
+    div(class="author")
+      p=author.name
+      form(method='POST' action="/authors/"+author.id+"?_method=DELETE")
+        button(type="submit") Delete
