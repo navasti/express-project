@@ -7,6 +7,7 @@ const config = require('./config');
 
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 
 const mongoose = require('mongoose');
 mongoose.connect(config.db, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
+app.use('/books', bookRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
