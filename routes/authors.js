@@ -3,7 +3,6 @@ const router = express.Router();
 const Author = require('../models/author');
 
 /* All authors route */
-
 router.get('/', async (req, res, next) => {
   let searchOptions = {}
   if(req.query.name !== null && req.query.name !== ''){
@@ -33,9 +32,21 @@ router.post('/', async (req, res, next) => {
   }catch{
     res.render('authors/new', {
       author,
-      errorMessage: 'Error creating author'
+      errorMessage: 'Creating author error'
     })
   }
 });
+
+// Delete author route
+router.delete('/:id', async (req, res) => {
+  let author;
+  try{
+    author = await Author.findById(req.params.id);
+    await author.remove();
+    res.redirect(`/authors`)
+  }catch{
+    res.redirect(`/authors`)
+  }
+})
 
 module.exports = router;

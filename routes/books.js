@@ -4,7 +4,6 @@ const Book = require('../models/book');
 const Author = require('../models/author');
 
 /* All books route */
-
 router.get('/', async (req, res, next) => {
   let searchOptions = {}
   if(req.query.title !== null && req.query.title !== ''){
@@ -32,15 +31,26 @@ router.post('/', async (req, res, next) => {
     pageCount: req.body.pageCount,
     description: req.body.description
   })
-  console.log(req.body)
   try{
     const newBook = await book.save()
     res.redirect(`books`)
   }catch{
     renderNewPage(res, book, true)
   }
-
 });
+
+// Delete book route
+router.delete('/:id', async (req, res) => {
+  let book;
+  try{
+    const id = req.params.id;
+    book = await Book.findById(id);
+    await book.remove();
+    res.redirect(`/books`)
+  }catch{
+    res.send(`Couldn't delete the book`)
+  }
+})
 
 async function renderNewPage(res, book, hasError=false){
   try{
