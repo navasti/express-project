@@ -1,8 +1,296 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Poppins:300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+html {
+  font-size: 10px;
+  font-family: 'Poppins', sans-serif;
 }
+
+html body {
+  overflow-x: hidden;
+  font-size: 1.6rem;
+  background-color: #222;
+  color: #fff;
+}
+
+html body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+html body form input,
+html body form textarea {
+  padding: .5rem 1rem;
+  font-size: 1.5rem;
+  margin: 1rem 0 .5rem 0;
+}
+
+html body form textarea {
+  margin: 0;
+}
+
+html body form button {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  padding: .2rem 0;
+  border-radius: 2px;
+}
+
+html body button {
+  border: 1px solid #888;
+  background-color: #222;
+  color: #ccc;
+  cursor: pointer;
+}
+
+html body a {
+  display: block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+html body ul {
+  list-style: none;
+}
+
+html body h1 {
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 2rem;
+  margin-top: 4rem;
+}
+
+html body .search-authors,
+html body .search-books,
+html body .add-book {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem;
+}
+
+html body .authors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem 0 1rem 0;
+}
+
+html body .authors .author {
+  text-align: center;
+  margin: 1rem;
+}
+
+html body .authors .author p {
+  font-size: 2.6rem;
+  letter-spacing: 2px;
+}
+
+html body .authors .author form {
+  display: block;
+}
+
+html body .authors .author form button {
+  padding: .1rem .3rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+html body .create-author {
+  margin-top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .books {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .books .book {
+  margin: 2rem 0;
+}
+
+html body .books .book p {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+html body .books .book form {
+  display: block;
+}
+
+html body .books .book form button {
+  padding: .1rem .3rem;
+}
+
+html body .add-book form {
+  margin-top: 1rem;
+}
+
+html body .add-book form button {
+  margin-top: 1rem;
+}
+
+html body .add-book form div label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+html body .add-book form div label input {
+  margin: 0;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav .home {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+
+nav .hamburger {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 999;
+  width: 4.5rem;
+  padding: .5rem;
+  cursor: pointer;
+}
+
+nav .hamburger div {
+  width: 100%;
+  height: .3rem;
+  margin: .2rem 0;
+  background-color: #fff;
+  border-radius: 1rem;
+}
+
+nav .mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  z-index: 39;
+}
+
+nav .mobile-menu.active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+nav .desktop-menu {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  html body h1 {
+    font-size: 3.2rem;
+    padding: 0 2rem;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  nav .mobile-menu {
+    display: none;
+  }
+  nav .hamburger {
+    display: none;
+  }
+  nav .desktop-menu {
+    display: block;
+  }
+  nav .desktop-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 2rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */
