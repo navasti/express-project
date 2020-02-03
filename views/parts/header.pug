@@ -1,12 +1,27 @@
 nav
-  a(href="/") Homepage
+  a(href="/" class="home") Home
+  div(class="hamburger")
+    div
+    div
+    div
+  div(class="mobile-menu")
     ul
       li
         a(href="/authors") Favourite Authors
-        br
-        a(href="/authors/new") Add Author
+      li
+        a(href="/authors/new" class="single-line") Add Author
       li
         a(href="/books") Favourite Books
-        br
+      li
+        a(href="/books/new") Add Book
+  div(class="desktop-menu")
+    ul
+      li
+        a(href="/authors") Favourite Authors
+      li
+        a(href="/authors/new" class="single-line") Add Author
+      li
+        a(href="/books") Favourite Books
+      li
         a(href="/books/new") Add Book
         

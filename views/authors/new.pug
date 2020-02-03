@@ -1,7 +1,8 @@
 extends ../layout
 
 block content
-  h2 New Author
-    form(action="/authors" method="POST")
-      include form-fields.pug
-      button(type="submit") Create
+  div(class="create-author")
+    h2 Add new Author
+      form(action="/authors" method="POST")
+        input(type="text" name="name" value=author.name placeholder="name")
+        button(type="submit") Create
