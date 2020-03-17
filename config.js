@@ -1,3 +1,5 @@
 module.exports = {
-    db: `mongodb+srv://admin:lVsO5UG2VAuThwZ3@cluster1-jtajs.mongodb.net/test?retryWrites=true&w=majority`,
+    db: `mongodb+srv://USER:PASSWORD@cluster1-jtajs.mongodb.net/test?retryWrites=true&w=majority`,
 }
+// example for local db connection:
+// `mongodb://localhost:27017/YOURAPP`
