@@ -1,7 +1,22 @@
-### This is my first project in which I used Database and Back-End technologies.
-#### I was focused mainly on logic and I only added a little bit of styles so it doesn't look tragic.
+## Favourite Books
+This project is a website where you can store your favourite books and authors by adding or deleting them to database. 
 
-The project is written in one of the most popular Node.js frameworks whitch is Express and I used express-generator with pug views engine.
-The database that I used is MongoDB.
+## Getting Started
+Install node_modules folder
+```
+npm install
+```
 
-Project is hosted in Heroku platform and is available here https://express-first-project.herokuapp.com/
+In config.js file change path to your own MongoDB Collection. \
+If not familiar with database visit mongoose documentation https://mongoosejs.com/docs/connections.html
+
+Run the server (it will fire with nodemon)
+```
+npm start
+```
+
+## Used Technologies
+* HTML
+* MongoDB - Mongoose
+* Node - Express Generator - Pug Views Engine
+* A little bit of SCSS (did not care too much about look in this case)
